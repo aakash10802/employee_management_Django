@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import employee
 from .forms import employeeForm
 # Create your views here.
@@ -9,13 +9,20 @@ def success_function(request):
 
 def home(request):
     return render(request,"home.html")
-def employee_list(request):
+
+def employee_function(request):
     if request.method=="POST":
         s=employeeForm(request.POST)
         if s.is_valid():
             s.save()
-            return render(success_function)
-    
-    
-    x=employeeForm()
-    return render(request,"employee_list.html",{"view":x})
+            return redirect(success_function)
+    else:
+        x=employeeForm    
+        return render(request,"employedetails.html",{"view":x})
+
+def next_function(request):
+    return render(request,'next.html')
+
+def list_function(request):
+    m=employee.objects.all()
+    return render(request,'list.html',{'empt':m})
