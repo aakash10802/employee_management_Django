@@ -87,7 +87,10 @@ This project is licensed under the MIT License.
 Contact
 For any questions or support, contact the repository owner at:
 
-``github.com/aakash10802``
+## Repository Link
+You can view and clone the repository here:  
+[Employee Management Django Repository](https://github.com/aakash10802/employee_management_Django)
+
 ### How to Use:
 1. Save this content in a file named `README.md`.
 2. Add it to your repository and push the changes:
